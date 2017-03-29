@@ -4,6 +4,11 @@
   description: |
     Containers that run the slave plugin.
   questions:
+    - variable: container_name
+      required: false
+      type: "string"
+      description: |
+        Name agent will register itself as
     - variable: user
       label: "User to run swarm process"
       description: |
@@ -20,13 +25,8 @@
       required: true
       description: |
         Username to authenticate to a secured Jenkins host with.
-    - variable: swarm_executors
-      required: false
-      type: "string"
-      description: |
-        Number of executors on the swarm. Default is #cpus
     - variable: jenkins_url
-      label: "Jenkins Server URL"
+      label: "Jenkins Server URL e.g. http://host:port"
       type: "string"
       required: true
       description: |

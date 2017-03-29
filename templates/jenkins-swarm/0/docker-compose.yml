@@ -2,8 +2,9 @@ swarm-clients:
   image: "jenkinsci/jnlp-slave"
   user: "${user}"
   labels:
-    io.rancher.scheduler.affinity:host_label_soft: ci=worker
+    io.rancher.scheduler.affinity:host_label_soft: profile=infrastructure
     io.rancher.container.hostname_override: container_name
+  command: -url=${jenkins_url} ${jenkins_secret} ${container_name}
   environment:
     JENKINS_URL: "${jenkins_url}"
     JENKINS_SECRET: "${jenkins_secret}"
@@ -11,3 +12,4 @@ swarm-clients:
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
     - '/usr/bin/docker:/usr/bin/docker'
+    - '/tmp:/tmp'
