@@ -4,7 +4,6 @@ swarm-clients:
   labels:
     io.rancher.scheduler.affinity:host_label_soft: profile=infrastructure
     io.rancher.container.hostname_override: container_name
-  command: -url=${jenkins_url} ${jenkins_secret} ${container_name}
   environment:
     JENKINS_URL: "${jenkins_url}"
     JENKINS_SECRET: "${jenkins_secret}"

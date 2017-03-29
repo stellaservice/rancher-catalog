@@ -4,11 +4,18 @@
   description: |
     Containers that run the slave plugin.
   questions:
-    - variable: container_name
-      required: false
+    - variable: jenkins_url
+      label: "Jenkins Server URL e.g. http://host:port"
       type: "string"
+      required: true
       description: |
-        Name agent will register itself as
+        Jenkins server URL
+    - variable: jenkins_secret
+      label: "Jenkins API key"
+      type: "string"
+      required: true
+      description: |
+        Username to authenticate to a secured Jenkins host with.
     - variable: user
       label: "User to run swarm process"
       description: |
@@ -19,15 +26,3 @@
       options:
         - jenkins
         - root
-    - variable: jenkins_secret
-      label: "Jenkins secret"
-      type: "string"
-      required: true
-      description: |
-        Username to authenticate to a secured Jenkins host with.
-    - variable: jenkins_url
-      label: "Jenkins Server URL e.g. http://host:port"
-      type: "string"
-      required: true
-      description: |
-        Jenkins server URL
