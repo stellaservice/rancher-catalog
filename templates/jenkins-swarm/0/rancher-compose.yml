@@ -16,12 +16,6 @@
       required: true
       description: |
         Username to authenticate to a secured Jenkins host with.
-    - variable: agent_name
-      label: "Name agent should register itself as"
-      type: "string"
-      required: true
-      description: |
-        Jenkins server URL
     - variable: user
       label: "User to run swarm process"
       description: |
