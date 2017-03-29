@@ -7,7 +7,7 @@ swarm-clients:
   environment:
     JENKINS_URL: "${jenkins_url}"
     JENKINS_SECRET: "${jenkins_secret}"
-    JENKINS_AGENT_NAME: "${name}"
+    JENKINS_AGENT_NAME: "${agent_name}"
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
     - '/usr/bin/docker:/usr/bin/docker'
